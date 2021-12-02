@@ -8,7 +8,7 @@ const getDataController = require('./controllers/controller.getData')
 
 const app = express()
 const port = 3004
-const mongoURI = ""
+const mongoURI ="mongodb+srv://vienshk:12345@cluster3.av3lb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,

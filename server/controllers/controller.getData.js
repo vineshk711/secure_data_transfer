@@ -26,7 +26,7 @@ exports.getData = (req, res) => {
         const base64String = Buffer.from(response.image.data).toString("base64")
         // res.send(base64String)
         fs.writeFile(
-          'output.jpg',
+          'output.png',
           base64String,
           "base64",
           function (err) {
@@ -34,7 +34,7 @@ exports.getData = (req, res) => {
           }
         )
         
-        const subprocess = runScript(path.join(__dirname, '../output.jpg'))
+        const subprocess = runScript(path.join(__dirname, '../output.png'))
         let hiddenMsg = ''
         subprocess.stdout.on("data", (data) => {
           console.log(`${data}`)

@@ -6,7 +6,6 @@ const { spawn } = require("child_process")
 const _ = require("lodash")
 
 exports.addData = (req, res) => {
-
     const  runScript = (file, msg, dest) => {
       return spawn("python3", [
         "-u",
@@ -28,7 +27,7 @@ exports.addData = (req, res) => {
       }
       
       
-      fields.name = fields.name + "." + file.image.originalFilename.split(".").pop()
+      fields.name = fields.name
       const { name, message } = fields
       
       if (!name || !message) {
@@ -36,8 +35,7 @@ exports.addData = (req, res) => {
           error: "Please fill all the field",
         })
       }
-
-      const subprocess = runScript(file.image.filepath, message, name)
+      const subprocess = runScript(file.image.filepath, message, 'input.png')
 
       subprocess.stdout.on("data", (data) => {
         console.log(`${data}`)
@@ -47,8 +45,9 @@ exports.addData = (req, res) => {
       })
   
       let data = new Data(fields)
+      
       subprocess.stderr.on("close", () => {
-        const img = fs.readFileSync(path.join(__dirname, `../${name}`))
+        const img = fs.readFileSync(path.join(__dirname, `../input.png`))
          data.image.data = new Buffer(img.toString('base64'), "base64")
          data.image.contentType = file.image.mimetype
 
@@ -58,7 +57,6 @@ exports.addData = (req, res) => {
                error: "Saving data in DB failed",
              })
            }
-          //  fs.unlinkSync(`../${name}`)
            res.status(200).json({message: "data saved successfully"})
          })
         console.log("Closed")
