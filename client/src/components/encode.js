@@ -1,11 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import image from './images/College Project LOGO.png';
 import './css/style.css';
 
+
 function Encode() {
+    const [values, setValues] = useState({
+        name: "",
+        message: ""
+    })
+    const handleChange = name => event => {
+        setValues({...values, [name]: event.target.value})
+    }
+
+
+    const {name, message} = values
     return (
         <div>
-            
+            {JSON.stringify(values)}
             <meta charSet="UTF-8" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -90,11 +101,13 @@ function Encode() {
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p style={{ textAlign: "center" }}>
-                    &nbsp;Enter your text <input type="text" />
+                    &nbsp;Enter the name of your message file
+                    <input type="text" value={name} onChange={handleChange('name')}/>
                 </p>
                 <p>&nbsp;</p>
                 <p style={{ textAlign: "center" }}>
-                    &nbsp;Enter name for the image <input type="text" />
+                    &nbsp;Enter the message
+                    <input type="text" value={message} onChange={handleChange('message')}/>
                 </p>
                 <p>&nbsp;</p>
                 <p style={{ textAlign: "center" }}>
