@@ -1,0 +1,49 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none; }
+  
+  html,
+  input,
+  button {
+    font-family: Helvetica, Arial, sans-serif; }
+  
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; }
+  
+  .page {
+    height: 100%;
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding-top: 1.5em;
+    flex-direction: column; }
+    .page_disable-select {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+    .page__header {
+      margin-bottom: 1.5em; }
+    .page__footer {
+      padding-bottom: 2em; }
+    .page__files {
+      position: relative;
+      width: 100%;
+      max-width: 970px; }
+    @media screen and (max-width: 970px) {
+      .page {
+        padding-left: 15px;
+        padding-right: 15px; } }
+
+        .percent-symbol {
+            font-size: 0.75em;
+            font-weight: bolder; }
+

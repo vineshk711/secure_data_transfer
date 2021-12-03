@@ -1,4 +1,4 @@
-const Data = require('../models/model.data')
+const Data = require('../models/model.stegnoData')
 const formidable = require('formidable')
 const fs = require('fs')
 const path = require("path")

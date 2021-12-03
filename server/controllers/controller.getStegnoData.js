@@ -1,4 +1,4 @@
-const Data = require('../models/model.data')
+const Data = require('../models/model.stegnoData')
 const path = require("path")
 const fs = require("fs")
 const { spawn } = require("child_process")

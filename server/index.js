@@ -3,8 +3,10 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
-const addDataController = require('./controllers/controller.addData')
-const getDataController = require('./controllers/controller.getData')
+const addStegnoDataController = require('./controllers/controller.addStegnoData')
+const getStegnoDataController = require('./controllers/controller.getStegnoData')
+const addCryptoDataController = require('./controllers/controller.addCryptoData')
+// const getCryptoDataController = require("./controllers/controller.getCryptoData")
 
 const app = express()
 const port = 3004
@@ -24,8 +26,10 @@ app.use(
 app.use(bodyParser.json())
 
 // API's
-app.post('/api/post-data', addDataController.addData)
-app.get('/api/get-data', getDataController.getData)
+app.post('/api/stegno/post-data', addStegnoDataController.addData)
+app.get('/api/stegno/get-data', getStegnoDataController.getData)
+app.post('/api/crypto/post-data', addCryptoDataController.addData)
+// app.get('/api/crypto/get-data', getCryptoDataController.getData)
 
   
 app.listen(port, () => {
