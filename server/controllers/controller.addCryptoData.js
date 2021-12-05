@@ -5,6 +5,7 @@ const { spawn } = require("child_process")
 const _ = require("lodash")
 
 exports.addData = (req, res) => {
+
   const runScript = (typeOfAlgo, plainText, key) => {
     return spawn("python3", [
       "-u",
@@ -15,16 +16,16 @@ exports.addData = (req, res) => {
     ])
   }
 
-  const {typeOfAlgo, plainText, key, name} = req.body
+  const {typeOfAlgo, message, key, name} = req.body
 
   
 
-    if (!plainText || !key || !typeOfAlgo || !name) {
+    if (!message || !key || !typeOfAlgo || !name) {
       return res.status(400).json({
         error: "All fields are compulsory",
       })
     }
-    const subprocess = runScript( typeOfAlgo=='DES'?1:3, plainText, key)
+    const subprocess = runScript( typeOfAlgo=='DES'?1:3, message, key)
 
     subprocess.stdout.on("data", (data) => {
       console.log(`${data}`)
@@ -42,11 +43,11 @@ exports.addData = (req, res) => {
 
       data.save((err, data) => {
         if (err) {
-          res.status(400).json({
+          res.status(200).json({
             error: "Saving data in DB failed",
           })
         }
-        res.status(200).json({ message: "data saved successfully" })
+        res.status(200).json({ message: "Encripted  data saved successfully" })
       })
       console.log("Closed")
     })

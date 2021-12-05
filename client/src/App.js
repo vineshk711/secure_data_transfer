@@ -7,7 +7,6 @@ import Decode from './components/decode';
 function App() {
   return (
     <div className="App">
-      
       <BrowserRouter>
         <Routes>
         <Route path="/" caseSensitive={false} element={<Home />} />

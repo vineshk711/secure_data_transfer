@@ -25,13 +25,11 @@ exports.addData = (req, res) => {
           error: "problem with image",
         })
       }
-      
-      
-      fields.name = fields.name
+      console.log(fields)
       const { name, message } = fields
       
       if (!name || !message) {
-        return res.status(400).json({ 
+        return res.status(400).send({ 
           error: "Please fill all the field",
         })
       }
@@ -42,6 +40,7 @@ exports.addData = (req, res) => {
       })
       subprocess.stderr.on("data", (data) => {
         console.log(`error:${data}`)
+        res.status(400).json(data)
       })
   
       let data = new Data(fields)
@@ -57,7 +56,7 @@ exports.addData = (req, res) => {
                error: "Saving data in DB failed",
              })
            }
-           res.status(200).json({message: "data saved successfully"})
+           res.status(200).json({message: "Encripted image saved successfully"})
          })
         console.log("Closed")
       })

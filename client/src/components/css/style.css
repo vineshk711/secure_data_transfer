@@ -1,49 +1,170 @@
-html {
-    height: 100%;
-    box-sizing: border-box;
-    -webkit-text-size-adjust: none; }
-  
-  html,
-  input,
-  button {
-    font-family: Helvetica, Arial, sans-serif; }
-  
-  *,
-  *:before,
-  *:after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit; }
-  
-  .page {
-    height: 100%;
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #171f25;
+  color: #fff;
+  text-align: center;
+  font-family: 'Baloo Bhaijaan 2', cursive;
+  font-size: 16pt;
+  box-sizing: border-box;
+}
+
+.logo {
+  background: #1F3544;
+  padding: 20px;
+}
+
+.logo_image {
+  padding: 5px;
+  margin: 5px;
+}
+
+/*   
+  à¤¯à¥‡ à¤¬à¥‡à¤¹à¥‡à¤¨ à¤•à¤¾ à¤²à¥Œà¥œà¤¾ à¤¢à¤‚à¤— à¤¸à¥‡ à¤•à¤¾à¤® à¤¨à¤¹à¥€à¤‚ à¤•à¤° à¤°à¤¹à¤¾  */
+
+/* .sidelogo_image {
+    float: left;
+    padding: 5px;
+    margin: 5px;
+  } */
+
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2 {
+  font-size: 16pt;
+}
+
+.title {
+  padding: 10px;
+  margin: 0;
+}
+
+.introduction {
+  padding: 5px;
+  margin: 5px;
+}
+
+.footer_text {
+  font-size: 8pt;
+  color: gray;
+}
+
+table {
+  padding: 50px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  background-color: #213D50;
+}
+
+input,
+label {
+  padding: 20px;
+  margin: 20px;
+  background-color: #295572;
+  border: 2px solid #295572;
+  border-radius: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 1em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  min-width: 11em;
+  font-size: small;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, opacity 0.2s ease-out;
+  width: 220px;
+  color: rgb(37, 247, 236);
+}
+
+label {
+
+  padding: 0.9em;
+}
+
+.reset_button,
+.submit_button,
+.encode_button,
+.decode_button {
+  position: relative;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #2a73d9;
+  border: 2px solid #2a73d9;
+  color: #fff;
+  text-align: center;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+  height: 2.5em;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 0 .9em;
+  margin: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  min-width: 11em;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.reset_button,
+.decode_button {
+  background-color: #D44D3B;
+  border-color: #D44D3B;
+}
+
+
+/* Loading animation css */
+/* .loader-wrapper {
     width: 100%;
-    max-width: 970px;
-    margin: 0 auto;
-    display: flex;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display:flex;
+    justify-content: center;
     align-items: center;
-    padding-top: 1.5em;
-    flex-direction: column; }
-    .page_disable-select {
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none; }
-    .page__header {
-      margin-bottom: 1.5em; }
-    .page__footer {
-      padding-bottom: 2em; }
-    .page__files {
-      position: relative;
-      width: 100%;
-      max-width: 970px; }
-    @media screen and (max-width: 970px) {
-      .page {
-        padding-left: 15px;
-        padding-right: 15px; } }
-
-        .percent-symbol {
-            font-size: 0.75em;
-            font-weight: bolder; }
-
+  }
+  .loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+  }
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+  }
+  @keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+  }
+  @keyframes loader-inner {
+    0% { height: 0%;}
+    25% { height: 0%;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0%;}
+  } */

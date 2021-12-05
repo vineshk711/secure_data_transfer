@@ -68,12 +68,6 @@ def AesDecryption(mode, IV):
 
 
 if __name__ == "__main__":
-    
-    print("\n1. DES Encryption")
-    print("2. DES Decryption")
-    print("3. AES Encryption")
-    print("4. AES Decryption")
-    
     # ch = int(input("\nEnter your choice: "))
     ch = int(sys.argv[1])
     if ch == 1 or ch == 3:

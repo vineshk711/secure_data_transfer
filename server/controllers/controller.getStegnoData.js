@@ -6,7 +6,6 @@ const { decode } = require('punycode')
 
 
 exports.getData = (req, res) => {
-
     const  runScript = (file) => {
       return spawn("python3", [
         "-u",
@@ -17,10 +16,10 @@ exports.getData = (req, res) => {
     }
     Data.findOne({name: req.body.name}, (err, response) => {
         if(err){
-            return res.status(400).json({error: "not found!"})
+            return res.status(400).json({error: err.message})
         }
         if(!response){
-            return res.status(404).json({error: "Not found"})
+            return res.status(200).json({error: "Not found, Please fill valid name"})
         }
         res.contentType = response.image.contentType
         const base64String = Buffer.from(response.image.data).toString("base64")
